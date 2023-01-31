@@ -113,9 +113,9 @@ def segment_send_telegram(event, context):
   # print("luas objek = ", 900 / (width * height) * max_area)
 
   #TELEGRAM BOT
-  TOKEN = "5731267048:AAGObbWGwAb7SJ4Ez5puj98v5GrPHMap7NM"
-  chat_id = "475837333"
-  chat_id2 = "670631346"
+  TOKEN = "5731267048:**********"
+  chat_id = "******"
+  chat_id2 = "********"
   message = "luas objek hari ini = " + str(max_area) + " piksel \nluas objek sebelumnya = "+ str(prev_val) +" piksel \nperkembangan = "+ str('{0:.2f}'.format(perkembangan)) + '%'
   url_tele_image = f"https://api.telegram.org/bot{TOKEN}/sendPhoto"
   data = dict(chat_id = chat_id, caption=message, photo = segmented_url)
