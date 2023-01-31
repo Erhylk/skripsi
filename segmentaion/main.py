@@ -7,7 +7,7 @@ from PIL import Image
 import requests
 
 config = {
-  "apiKey": "AIzaSyBinHQj79l7UQ5Gs6b5mdbk1xJ88E2KfAg",
+  "apiKey": "*********************",
   "authDomain": "skripsi-2022-363703.firebaseapp.com",
   "databaseURL": "https://skripsi-2022-363703-default-rtdb.asia-southeast1.firebasedatabase.app/",
   "storageBucket": "skripsi-2022-363703.appspot.com",
@@ -27,7 +27,7 @@ def url_to_image(url, readFlag=cv2.IMREAD_COLOR):
 def segment_send_telegram(event, context):
   firebase = pyrebase.initialize_app(config)
   auth = firebase.auth()
-  user = auth.sign_in_with_email_and_password('syammk16d@student.unhas.ac.id','123qweasd')
+  user = auth.sign_in_with_email_and_password('********@student.unhas.ac.id','*******')
   token = user['idToken']
   image_list = firebase.storage().child('images').list_files()
   latest_image = ''
