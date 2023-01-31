@@ -1,0 +1,47 @@
+[System]
+Name='DHT22'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=9
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='temperature'
+Range=[5 40]
+NumMFs=3
+MF1='normal':'trapmf',[15 20 25 30]
+MF2='dingin':'trapmf',[5 10 15 20]
+MF3='panas':'trapmf',[25 30 35 40]
+
+[Input2]
+Name='humidity'
+Range=[20 100]
+NumMFs=3
+MF1='kering':'trapmf',[20 30 40 50]
+MF2='medium':'trapmf',[30 50 70 90]
+MF3='basah':'trapmf',[70 80 90 100]
+
+[Output1]
+Name='pompa'
+Range=[0 80]
+NumMFs=3
+MF1='mati':'trapmf',[0 0 0 0]
+MF2='sebentar':'trapmf',[0 0 20 40]
+MF3='lama':'trapmf',[20 40 60 80]
+
+[Rules]
+2 1, 1 (1) : 1
+1 1, 2 (1) : 1
+3 1, 3 (1) : 1
+2 2, 1 (1) : 1
+1 2, 1 (1) : 1
+3 2, 3 (1) : 1
+2 3, 1 (1) : 1
+1 3, 1 (1) : 1
+3 3, 2 (1) : 1
