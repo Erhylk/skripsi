@@ -1,0 +1,8 @@
+opencv-python
+pyrebase4
+sseclient
+python_jwt
+gcloud
+pycryptodome
+requests-toolbelt
+pillow
